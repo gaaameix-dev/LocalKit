@@ -191,7 +191,10 @@ function ImageTool() {
     });
   }
 
-  async function processImage(image: { name: string; url: string }) {
+  async function processImage(image: {
+    name: string;
+    url: string;
+  }) {
     const img = new Image();
 
     img.src = image.url;

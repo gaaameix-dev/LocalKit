@@ -30,14 +30,11 @@ button {
   align-items: center;
   justify-content: center;
   gap: 8px;
-
   border: 0;
   border-radius: 11px;
   padding: 11px 16px;
-
   background: #0f172a;
   color: white;
-
   cursor: pointer;
 }
 
@@ -85,6 +82,7 @@ header {
   margin-top: 2px;
 
   color: #64748b;
+
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.15em;
@@ -126,6 +124,7 @@ header {
 
   border: 0;
   outline: 0;
+
   background: transparent;
 }
 
@@ -205,6 +204,7 @@ main {
   max-width: 680px;
 
   color: #64748b;
+
   font-size: 18px;
   line-height: 1.6;
 }
@@ -295,6 +295,7 @@ main {
 
   width: 48px;
   height: 48px;
+
   flex-shrink: 0;
 
   background: #f1f5f9;
@@ -311,6 +312,7 @@ main {
   margin: 0;
 
   color: #64748b;
+
   font-size: 13px;
   line-height: 1.45;
 }
@@ -381,6 +383,7 @@ main {
   gap: 8px;
 
   color: #475569;
+
   font-size: 13px;
 }
 
@@ -526,6 +529,7 @@ main {
   margin-top: 16px;
 
   color: #64748b;
+
   font-size: 13px;
 }
 
@@ -562,6 +566,7 @@ footer {
   color: #94a3b8;
 
   font-size: 12px;
+
   text-align: center;
 }
 
