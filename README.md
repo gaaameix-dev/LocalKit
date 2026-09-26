@@ -1,6 +1,6 @@
-# LocalKit V9.2.0 — Stable Privacy Edition
+# LocalKit V9.3.0 — Stable Privacy Edition
 
-## 10 shipped tools
+## 13 shipped tools
 1. Privacy Vault
 2. PDF Studio
 3. Invoice Pro
@@ -11,8 +11,13 @@
 8. GZIP Compressor
 9. Text Studio
 10. File Inspector
+11. PassGen (password generator)
+12. Unit Convert
+13. Color Studio
 
-V9.2.0 release: premium app-style UI refresh — mobile bottom navigation with an all-tools
+V9.3.0 release: three new offline tools — PassGen (crypto-secure password generator with
+entropy estimate), Unit Convert (length, weight, temperature, data, speed, area) and Color
+Studio (HEX/RGB/HSL conversion with WCAG contrast checking). V9.2.0 release: premium app-style UI refresh — mobile bottom navigation with an all-tools
 bottom sheet, animated view transitions, a glassy sticky app bar, safe-area/notch handling and
 a refined Material-inspired dark theme. No tool logic changed. V9.1.2 release: dependency security updates (`react-router-dom` 7.9.4 → 7.18.4, `vite` 7.1.7 → 7.3.6) clearing all `npm audit` advisories; `npm audit` now reports 0 vulnerabilities. Earlier releases removed the unused `dexie` dependency, added a `typecheck` script, and performed the V9.1 stabilization pass: removed dead code for previously dropped modules, fixed the
 header title, made every tool description match its actual behavior, hardened the
