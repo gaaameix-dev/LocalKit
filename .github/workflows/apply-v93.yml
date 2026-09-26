@@ -1,0 +1,42 @@
+name: Apply V9.3.0 feature patches
+
+# Temporary workflow: applies the exact-match V9.3.0 patches (three new offline
+# tools), regenerates package-lock.json for the new version, commits everything
+# and removes its own helper files.
+
+on:
+  push:
+    branches: [ui-v93]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Apply exact-match patches
+        run: python3 patches-v93.py
+
+      - name: Regenerate package-lock.json
+        run: npm install --package-lock-only --no-audit --no-fund
+
+      - name: Commit V9.3.0 changes
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/main.tsx src/styles.css package.json scripts/verify.mjs README.md BUILD-VERIFICATION.md package-lock.json
+          git rm -q patches-v93.py
+          git rm -q .github/workflows/apply-v93.yml || true
+          git commit -m "Add LocalKit V9.3.0 tools: PassGen, Unit Convert, Color Studio"
+          git push
