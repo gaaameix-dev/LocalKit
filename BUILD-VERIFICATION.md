@@ -1,4 +1,4 @@
-# LocalKit build verification (V9.1.2)
+# LocalKit build verification (V9.2.0)
 
 All checks for this release were run from a clean dependency state
 (`rm -rf node_modules && npm ci`) in a sandbox with network access.
@@ -24,7 +24,7 @@ Commands run and their meaning, in the order executed:
   - tool registry check (all 10 tool ids registered)
   - removed-feature check (`Screen`, `Brain`, `Share`, Second Brain, LAN Drop, Screenshot Lab)
   - vault crypto requirements (AES-GCM, PBKDF2, fresh 12-byte IV per encryption)
-  - package version pinned to 9.1.2
+  - package version pinned to 9.2.0
 - `npm run build` — `tsc -b` type check followed by a production Vite build.
 
 Supplementary checks also performed: `npm ls --depth=0` (dependency tree fully
@@ -69,6 +69,13 @@ once in `vite.config.ts`; no application source hard-codes it. The built output
 was additionally served locally (`vite preview`) and every `/LocalKit/` URL —
 app shell, manifest, service worker, assets and icons — returned HTTP 200
 with no root-level or missing paths.
+
+## V9.2.0 UI refresh
+
+App-style UI/UX overhaul, presentation only: new mobile bottom navigation (Home, Vault,
+PDF, Calculator + More) with an all-tools bottom sheet, animated view transitions, glassy
+sticky app bar, refined dark theme and safe-area insets. All tool logic, the tool
+registry format, the verification rules and the offline/privacy model are unchanged.
 
 ## V9.1.2 dependency security update
 
