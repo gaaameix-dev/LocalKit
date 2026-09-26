@@ -1,4 +1,4 @@
-# LocalKit V9.1.2 — Stable Privacy Edition
+# LocalKit V9.2.0 — Stable Privacy Edition
 
 ## 10 shipped tools
 1. Privacy Vault
@@ -12,7 +12,9 @@
 9. Text Studio
 10. File Inspector
 
-V9.1.2 release: dependency security updates (`react-router-dom` 7.9.4 → 7.18.4, `vite` 7.1.7 → 7.3.6) clearing all `npm audit` advisories; `npm audit` now reports 0 vulnerabilities. Earlier releases removed the unused `dexie` dependency, added a `typecheck` script, and performed the V9.1 stabilization pass: removed dead code for previously dropped modules, fixed the
+V9.2.0 release: premium app-style UI refresh — mobile bottom navigation with an all-tools
+bottom sheet, animated view transitions, a glassy sticky app bar, safe-area/notch handling and
+a refined Material-inspired dark theme. No tool logic changed. V9.1.2 release: dependency security updates (`react-router-dom` 7.9.4 → 7.18.4, `vite` 7.1.7 → 7.3.6) clearing all `npm audit` advisories; `npm audit` now reports 0 vulnerabilities. Earlier releases removed the unused `dexie` dependency, added a `typecheck` script, and performed the V9.1 stabilization pass: removed dead code for previously dropped modules, fixed the
 header title, made every tool description match its actual behavior, hardened the
 vault (PBKDF2 + AES-GCM with a per-record fresh IV and encrypted password verifier),
 fixed object-URL leaks in Image Lab, replaced per-page PDF downloads with a single

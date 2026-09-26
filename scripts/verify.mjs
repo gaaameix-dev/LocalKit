@@ -46,7 +46,7 @@ if (!fs.readFileSync(path.join(root, 'src', 'calc.ts'), 'utf8').includes('export
 }
 
 const pkg = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf8'));
-if (pkg.version !== '9.1.2') throw new Error('Version mismatch');
+if (pkg.version !== '9.2.0') throw new Error('Version mismatch');
 if (!pkg.scripts?.build || !pkg.scripts?.verify || !pkg.scripts?.test) throw new Error('Build/verify/test scripts missing');
 
-console.log('LocalKit V9.1.2 verification: PASS');
+console.log('LocalKit V9.2.0 verification: PASS');
