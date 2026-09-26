@@ -1,46 +1,55 @@
-# LocalKit
+# LocalKit V9.1.2 — Stable Privacy Edition
 
-LocalKit is an offline-first collection of browser tools.
+## 10 shipped tools
+1. Privacy Vault
+2. PDF Studio
+3. Invoice Pro
+4. Image Lab
+5. QR Studio
+6. Developer Toolbox
+7. Calculator
+8. GZIP Compressor
+9. Text Studio
+10. File Inspector
 
-## Tools
+V9.1.2 release: dependency security updates (`react-router-dom` 7.9.4 → 7.18.4, `vite` 7.1.7 → 7.3.6) clearing all `npm audit` advisories; `npm audit` now reports 0 vulnerabilities. Earlier releases removed the unused `dexie` dependency, added a `typecheck` script, and performed the V9.1 stabilization pass: removed dead code for previously dropped modules, fixed the
+header title, made every tool description match its actual behavior, hardened the
+vault (PBKDF2 + AES-GCM with a per-record fresh IV and encrypted password verifier),
+fixed object-URL leaks in Image Lab, replaced per-page PDF downloads with a single
+ZIP download, implemented invoice line items, calculator discount/EMI, file duplicate
+detection (SHA-256 content hashing) and a safe Markdown subset, and added unit
+tests for the calculator and ZIP writer.
 
-- Second Brain
-- PDF Toolbox
-- Private Vault
-- Invoice Generator
-- LAN File Share
-- Image Tools
-- QR Toolkit
-- Developer Toolbox
-- Screenshot Cleaner
-- Calculator Hub
+### Privacy
+- No application-level analytics.
+- No cloud upload from the shipped tools.
+- Selected files are processed in-browser.
+- Vault uses Web Crypto (PBKDF2 key derivation, AES-GCM records, fresh IV per record).
+- The 6-digit app PIN is a convenience lock only — it does not encrypt vault data.
+- Browser/device compromise remains outside the app security boundary.
 
-## Technology
-
-React  
-TypeScript  
-Vite  
-Dexie / IndexedDB  
-PWA  
-GitHub Pages
-
-## Privacy
-
-The application is designed around local browser processing.
-
-No backend is required.
-
-Sensitive features such as the vault and LAN sharing should receive additional security and browser-compatibility review before being treated as a hardened password manager or universal peer-to-peer transfer system.
-
-## Development
-
+### Verify, test and build
 ```bash
-npm install
-npm run dev
-```
-
-## Build
-
-```bash
+npm ci
+npm test
+npm run typecheck
+npm run verify
 npm run build
 ```
+
+### GitHub Pages deployment
+
+The repository is a normal source repository — never commit `node_modules/` or
+`dist/`. Pushing to `main` triggers `.github/workflows/deploy.yml`, which runs
+`npm ci` → `npm test` → `npm run typecheck` → `npm run verify` → `npm run build`
+and deploys the generated `dist/` to GitHub Pages via the official
+`actions/upload-pages-artifact` / `actions/deploy-pages` actions. Any failing
+step stops the deployment.
+
+Required repository setting (once): Settings → Pages → Build and deployment →
+Source: **GitHub Actions**.
+
+The app is served from `/LocalKit/` (the deployment base path is defined once,
+in `vite.config.ts`), so the site URL is:
+
+    https://<username>.github.io/LocalKit/
