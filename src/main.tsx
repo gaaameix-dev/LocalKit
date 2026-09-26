@@ -929,7 +929,7 @@ function Dev() {
     <Workspace icon="🛠️" title="Dev Forge" desc="Every operation runs locally.">
       <textarea aria-label="Input" value={input} onChange={e => setInput(e.target.value)} placeholder="Input…" />
       <div className="actions">
-        {['json', 'Format JSON'], ['min', 'Minify JSON'], ['b64', 'Base64'], ['b64dec', 'Base64 Decode'], ['url', 'URL Encode'], ['dec', 'URL Decode'], ['sha', 'SHA-256'], ['uuid', 'UUID']].map(x => <button key={x[0]} onClick={() => act(x[0])}>{x[1]}</button>)}
+        {[['json', 'Format JSON'], ['min', 'Minify JSON'], ['b64', 'Base64'], ['b64dec', 'Base64 Decode'], ['url', 'URL Encode'], ['dec', 'URL Decode'], ['sha', 'SHA-256'], ['uuid', 'UUID']].map(x => <button key={x[0]} onClick={() => act(x[0])}>{x[1]}</button>)}
       </div>
       <textarea readOnly aria-label="Output" value={out} placeholder="Output…" />
     </Workspace>
