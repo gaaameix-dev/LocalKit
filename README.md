@@ -1,6 +1,6 @@
-# LocalKit V9.3.0 — Stable Privacy Edition
+# LocalKit V9.4.0 — Stable Privacy Edition
 
-## 13 shipped tools
+## 14 shipped tools
 1. Privacy Vault
 2. PDF Studio
 3. Invoice Pro
@@ -14,8 +14,12 @@
 11. PassGen (password generator)
 12. Unit Convert
 13. Color Studio
+14. Stopwatch & Timer
 
-V9.3.0 release: three new offline tools — PassGen (crypto-secure password generator with
+V9.4.0 release: full Settings section (accent color, startup view, animation toggle,
+storage manager with one-tap local data wipe, about panel) and a new Stopwatch tool
+(precision stopwatch with laps, best/worst highlighting, countdown timer with presets
+and an audio alarm, keyboard shortcuts). V9.3.0 release: three new offline tools — PassGen (crypto-secure password generator with
 entropy estimate), Unit Convert (length, weight, temperature, data, speed, area) and Color
 Studio (HEX/RGB/HSL conversion with WCAG contrast checking). V9.2.0 release: premium app-style UI refresh — mobile bottom navigation with an all-tools
 bottom sheet, animated view transitions, a glassy sticky app bar, safe-area/notch handling and
